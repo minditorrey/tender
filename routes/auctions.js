@@ -29,6 +29,14 @@ router.route('/:id')
     })
   })
 
+  .get((req, res) => {
+    Auction.findById(req.params.id, function (err, auction) {
+    res.status(err ? 400 : 200).send(err || auction);
+    console.log('auction:', auction);
+  });
+});
+
+
 router.get('/', (req, res) => {
   Auction.find({}, (err, auctions) => {
     res.status(err ? 400 : 200).send(err || auctions);

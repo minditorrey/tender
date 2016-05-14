@@ -32,6 +32,10 @@
       		<div class="form-group">
       		  <label>Auction Expires On:</label>  
       		  <input type="datetime-local" class="form-control" ng-model='thisAuctionEdit.exp'>
+      		</div>      		
+      		<div class="form-group">
+      		  <label>Item Image:</label>  
+      		  <input type="string" class="form-control" ng-model='thisAuctionEdit.image'>
       		</div>
       		<button class="btn btn-lg addIt" ng-click="addAuction(thisAuctionEdit)">Add Auction</button>     
       		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Edit</button>
@@ -59,7 +63,7 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		    <tr ng-repeat="auction in auctions">
+		    <tr ui-sref="details({id: auction._id})" ng-click="getThisAuction(auction)" ng-repeat="auction in auctions | filter: sortByName">
 		      <td>{{auction.item}}</td>
 		      <td>{{auction.username}}</td>
 		      <td>{{auction.initialBid | currency}}</td>

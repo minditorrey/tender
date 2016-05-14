@@ -1,0 +1,12 @@
+<div class="row well tableRow">
+	<div class="col-sm-10 col-sm-offset-1">
+
+		<h2>{{auction.item}}</h2>
+		<img ng-src="{{auction.image}}" alt="">
+		<h4 class="itemInfo">Auction Host: {{auction.username}}</h4>
+		<h4 class="itemInfo">Initial Bid: {{auction.initialBid | currency}}</h4>
+		<h4 class="itemInfo">Highest Bid: {{auction.highestBid.value | currency}}</h4>
+		<h4 class="itemInfo">Highest Bid By: {{auction.highestBid.user}}</h4>
+		<h4 class="itemInfo">Auction Expire: {{auction.exp}}</h4>
+	</div>
+</div> <!-- end well -->

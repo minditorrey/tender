@@ -27,7 +27,11 @@ app.service('AuctionsService', function($http) {
 
   	this.removeAuction = (auction) => {
   		return $http.delete(`/api/auctions/${auction._id}`)
-  }
+  	}
+
+  	this.getThisAuction = (id) => {
+  		return $http.get(`/api/auctions/${id}`)
+  	}
 
 })
 

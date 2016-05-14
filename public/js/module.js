@@ -38,6 +38,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			sp: {
 				authenticate: true
 			}
+		})		
+		.state('details', {
+			url: '/details/:id',
+			templateUrl: '/templates/details.html',
+			controller: 'detailsController',
+			sp: {
+				authenticate: true
+			}
+			// resolve: {
+			// 	AUCTION: function($auction) {
+			// 		return $auction.get();
+			// 	}
+			// }
 		})
 
 
