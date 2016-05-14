@@ -1,0 +1,24 @@
+{
+  "name": "tender",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Mindi Torrey <minditorrey@me.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/minditorrey/tender",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-ui-router": "^0.2.18",
+    "stormpath-sdk-angularjs": "^1.0.0",
+    "bootstrap": "^3.3.6"
+  }
+}

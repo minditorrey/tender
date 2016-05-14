@@ -4,7 +4,7 @@ var express = require('express');
 var path = require('path');
 var router = express.Router();
 
-router.use('/nextRoute, require('./nextRoute'));
+router.use('/auctions', require('./auctions'));
 
 
 module.exports = router;

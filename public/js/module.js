@@ -1,19 +1,43 @@
-var app = angular.module('myFaceApp', ['ui.router']);
+var app = angular.module('tenderApp', ['ui.router', 'stormpath', 'stormpath.templates']);
 
-
+app.run(function($stormpath){
+  $stormpath.uiRouter({
+    loginState: 'login',
+    defaultPostLoginState: 'home'
+  });
+});
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
 	$stateProvider
-		.state('users', {
+		.state('home', {
 			url: '/',
-			templateUrl: '/templates/users.html',
-			controller: 'usersController'
+			templateUrl: '/templates/home.html',
+			controller: 'homeController'
 		})
-		.state('register', {
-			url: '/register',
-			templateUrl: '/templates/users.html',
-			controller: 'usersController'
+    	.state('login', { 
+    		url: '/login', 
+    		templateUrl: '/templates/login.html' 
+    	})
+    	.state('register', { 
+    		url: '/register', 
+    		templateUrl: '/templates/register.html' 
+    	})
+    	.state('auctions', {
+			url: '/auctions',
+			templateUrl: '/templates/auctions.html',
+			controller: 'auctionsController',
+			sp: {
+				authenticate: true
+			}
+		})
+		.state('profiles', {
+			url: '/profiles',
+			templateUrl: '/templates/profiles.html',
+			controller: 'profilesController',
+			sp: {
+				authenticate: true
+			}
 		})
 
 

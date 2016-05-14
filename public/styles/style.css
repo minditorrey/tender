@@ -1,0 +1,73 @@
+container {
+	padding: 25px;
+}
+
+body {
+	background: url(https://goo.gl/YeMNwq) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+h1 {
+	margin-left: 5%;
+	font-size: 86px;
+	color: #ff7200;
+	margin-top: 0%;
+	font-weight: bold;
+	text-shadow: 2px 2px 3px gray;	
+}
+
+h4 {
+	margin-left: 32%;
+	font-size: 24px;
+	color: #ff7200;
+	margin-top: -3%;
+	font-weight: bold;
+	text-shadow: 2px 2px 3px gray;	
+}
+
+h5 {
+	font-size: 18px;
+	color: #ff7200;
+}
+
+h6 {
+	font-size: 18px;
+	color: #ff7200;
+}
+
+.black {
+	font-size: 24px;
+	color: #ff7200;
+	font-weight: bold;
+	margin-top: 6%;
+	float: right;
+	text-shadow: 1px 1px 2px gray;
+}
+
+.header {
+	background-color: gray;
+	background: rgba(225, 225, 225, .8);
+}
+
+.profileInfo {
+	margin-top: 3%;
+}
+
+.profilePic {
+	box-shadow: 3px 3px 3px gray;
+}
+
+.addIt {
+	background-color: #ff7200;
+	margin-left: 1%;
+}
+
+.editBtn, .removeBtn {
+	background-color: #ff7200;
+}
+
+

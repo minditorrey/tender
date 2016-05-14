@@ -2,29 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Face</title>
+  <title>Tender</title>
   <!-- <link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css"> -->
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/styles/style.css">
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/angular/angular.min.js"></script>
   <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
   <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  
+  <script src="/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.min.js"></script>
+    <script src="/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.min.js"></script>
+<!--     // <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> -->
     <!--<script src="/bower_components/ngSweetAlert/SweetAlert.min.js"></script>
     <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script> -->
   <script src="/js/module.js"></script>
   <script src="/js/controllers.js"></script>
   <script src="/js/services.js"></script>
 </head>
+    <body ng-app='tenderApp'>
+        <div class="container">
+            <div class="row header">
+                <div class="col-sm-3">
+                    <h1>Tender</h1>
+                </div>
 
-<body ng-app=''>
+                <div class="col-sm-2">
+                    <a class="black" if-not-user ui-sref='login'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Login</a>
+                </div > 
+                <div class="col-sm-2">
+                    <a class="black" sp-logout if-user ui-sref='home'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Logout</a>
+                    <a class="black" if-not-user ui-sref='register'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Register</a>
+                </div>                
+                <div class="col-sm-2">
+                    <a class="black" ui-sref='profiles'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Profile</a>
+                </div>
+                <div class="col-sm-2">
+                    <a class="black" ui-sref='auctions'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Auctions</a>
+                </div>
+                
+                
+            </div> 
 
 
 
-<ui-view></ui-view>
+        <ui-view></ui-view>
 
-
-  </body>
+        </div>
+    </body>
 </html>
