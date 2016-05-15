@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+	console.log(req.body);
   Auction.create(req.body, err => {
     res.status(err ? 400 : 200).send(err);
   });
@@ -27,6 +28,7 @@ router.route('/:id')
     Auction.findByIdAndRemove(req.params.id, (err, auction) => {
       res.status(err ? 400 : 200).send(err);
     })
+
   })
 
   .get((req, res) => {

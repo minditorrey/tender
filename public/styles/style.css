@@ -22,11 +22,11 @@ h1 {
 
 h4 {
 	margin-left: 32%;
-	font-size: 24px;
+	font-size: 22px;
 	color: #ff7200;
 	margin-top: -3%;
 	font-weight: bold;
-	text-shadow: 2px 2px 3px gray;	
+	text-shadow: 1px 1px 2px gray;	
 }
 
 h5 {
@@ -66,10 +66,63 @@ h6 {
 	margin-left: 1%;
 }
 
-.editBtn, .removeBtn {
+.editBtn {
 	background-color: #ff7200;
+	float: right;
+	margin-right: 12%;
+	margin-top: 5%;
+}
+
+.removeBtn {
+	background-color: #ff7200;
+	float: right;
+	margin-right: 1%;
+	margin-top: 5%;
 }
 
 .itemInfo {
+	margin-top: 3%;
+}
+
+.items {
 	margin-top: 1%;
+	font-size: 28px;
+	color: #ff7200;
+}
+
+tr:hover { 
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.orange {
+	color: #ff7200;
+
+}
+
+.margin {
+	margin-left: 7%;
+}
+.imgWell {
+	background-color: black;
+}
+
+.green {
+	color: green;
+}
+
+.yourBid {
+	color: green;
+	font-size: 18px;
+}
+
+.itemImage {
+	box-shadow: 3px 3px 3px gray;
+	margin-bottom: 7%;
+}
+
+.inputBid {
+	margin-left: 5%;
 }
