@@ -45,7 +45,24 @@ router.get('/', (req, res) => {
   });
 });
 
-router.route('/:username')
+
+
+router.post('/', (req, res) => {
+	console.log(req.body);
+  Auction.create(req.body, err => {
+    res.status(err ? 400 : 200).send(err);
+  });
+});
+
+router.route('/details/:id')
+  	.post((req, res) => {
+	console.log('details/id: req.body:', req.body)
+    Auction.findByIdAndUpdate(req.params.id, { $set: req.body }, (err, auction) => {
+      res.status(err ? 400 : 200).send(err || auction);
+    })
+  })
+
+router.route('/users/:username')
 	.get((req, res) => {
 		console.log(req.params.username)
 		Auction
@@ -55,6 +72,5 @@ router.route('/:username')
 			res.status(err ? 400 : 200).send(err || auctions);
 		})
 	})
-
-
+	
 module.exports = router;

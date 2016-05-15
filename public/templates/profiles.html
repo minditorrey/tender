@@ -31,13 +31,54 @@
 		  </thead>
 		  <tbody>
 		    <tr ng-repeat="auction in auctions">
-		      <td>{{auction.item}}</td>
-		      <td>{{auction.owner}}</td>
-		      <td>{{auction.initialBid | currency}}</td>
-		      <td>{{auction.highestBid.value | currency}}</td>
-		      <td>{{auction.highestBid.user}}</td>
-		      <td>{{auction.exp}}</td>
+		      	<td>{{auction.item}}</td>
+		      	<td>{{auction.owner}}</td>
+		      	<td>{{auction.initialBid | currency}}</td>
+		      	<td>{{auction.highestBid.value | currency}}</td>
+		      	<td>{{auction.highestBid.user}}</td>
+		      	<td>{{auction.exp}}</td>
+		      	<td><button class="btn btn-lg btn-default glyphicon glyphicon-pencil editBtn" ng-click="editAuction(auction)"></button></td>
+        	  	<td><button class="btn btn-lg btn-default glyphicon glyphicon-trash removeBtn" ng-click="removeAuction(auction)"></button></td>
 		  </tbody>
 		</table>
 	</div>
 </div>
+
+<div class="well">
+	<div class="row formRow">
+	<div class="col-sm-6 col-sm-offset-3">
+		
+		<form ng-model="thisAuctionEdit" ng-hide="auctionForm" ng-submit='saveChanges(thisAuctionEdit)'>
+      
+      		<div class="form-group">
+      		  <label>Item</label>
+      		  <input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item'>
+      		</div>
+		
+      		<div class="form-group">
+      		  <label>Username:</label>
+      		  <input type="text" placeholder="{{user.username}}" class="form-control" required ng-model='thisAuctionEdit.username'>
+      		</div>
+		
+      		<div class="form-group">
+      		  <label>Initial Bid:</label>
+      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid'>
+      		</div>
+
+      		<div class="form-group">
+      		  <label>Auction Expires On:</label>  
+      		  <input type="datetime-local" class="form-control" ng-model='thisAuctionEdit.exp'>
+      		</div>      		
+      		<div class="form-group">
+      		  <label>Item Image:</label>  
+      		  <input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage'>
+      		</div>
+      		   
+      		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Edit</button>
+  			<button class="btn btn-default editBtn">Save Edit</button> 
+ 
+    	</form>
+    </div>
+</div>
+
+</div> <!-- END WELL -->

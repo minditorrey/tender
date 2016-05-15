@@ -6,7 +6,8 @@
 			<img class="itemImage img-responsive" ng-src="{{auction.itemImage}}" width="250" alt="">
 			<div class="row">
 				
-				<button ng-click="showBidForm()" class="btn btn-lg margin addIt">Make Bid!</button>
+				<button class="btn btn-lg margin addIt" ng-click="editAuction(auction)" >Make Bid!</button>  
+				
 			</div>
 		</div>
 	</div>
@@ -16,62 +17,48 @@
 		<h4 class="itemInfo green">Highest Bid: {{auction.highestBid.value | currency}}</h4>
 		<h4 class="itemInfo">Highest Bid By: {{auction.highestBid.user}}</h4>
 		<h4 class="itemInfo">Auction Expires: {{auction.exp}}</h4>
-		<button class="btn btn-lg btn-default glyphicon glyphicon-pencil editBtn" ng-click="editAuction(auction)"></button>
-        <button class="btn btn-lg btn-default glyphicon glyphicon-trash removeBtn" ng-click="removeAuction(auction)"></button>
+		<h4><timer interval="1000" countdown="100">{{countdown}}</timer></h4>
 	</div>
 </div>
-	<div class="row formRow">
-		<div class="col-sm-3">
-		
-			<form ng-model="bidEdit" ng-hide="auctionForm" ng-submit='saveChanges(bidEdit)'>
-		
-      			<div class="form-group">
-      		  		<label class="yourBid">Your Bid:</label>
-      		 		<input class="inputBid" ng-value="{{50}}" ng-model="bidEdit.highestBid.value" type="number" class="form-control currency">
-      			</div>
-    
-      			<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Bid</button>
-  				<button class="btn btn-default editBtn" ng-click="addAuction(bidEdit)">Save Bid</button> 
- 
-    		</form>
-    	</div>
-	</div>
-</div>
+
+	
+
 </div> <!-- end well -->
 	
 
 <div class="well">	
 	<div class="row formRow">
 	<div class="col-sm-6 col-sm-offset-3">
-		
 		<form ng-model="thisAuctionEdit" ng-hide="auctionForm" ng-submit='saveChanges(thisAuctionEdit)'>
-      
+      		
+			<div class="form-group">
+      		  	<label class="yourBid">Your Bid:</label>
+      		 	<input class="inputBid" ng-value="{{50}}" ng-model="thisAuctionEdit.highestBid.value" type="number" class="form-control currency">
+      		</div>
+
       		<div class="form-group">
       		  <label>Item</label>
-      		  <input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item'>
+      		  <input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item' DISABLED>
       		</div>
 		
       		<div class="form-group">
       		  <label>Username:</label>
-      		  <input type="text" placeholder="{{user.username}}" class="form-control" required ng-model='thisAuctionEdit.username'>
+      		  <input type="text" placeholder="{{user.username}}" class="form-control" required ng-model='thisAuctionEdit.username' DISABLED>
       		</div>
 		
       		<div class="form-group">
       		  <label>Initial Bid:</label>
-      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid'>
+      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid' DISABLED>
       		</div>
-
-      		<div class="form-group">
-      		  <label>Auction Expires On:</label>  
-      		  <input type="datetime-local" class="form-control" ng-model='thisAuctionEdit.exp'>
-      		</div>      		
+      		
       		<div class="form-group">
       		  <label>Item Image:</label>  
-      		  <input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage'>
+      		  <input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage' DISABLED>
       		</div>
-      		<button class="btn btn-lg addIt" ng-click="addAuction(thisAuctionEdit)">Add Auction</button>     
-      		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Edit</button>
-  			<button class="btn btn-default editBtn">Save Edit</button> 
+
+      		  
+      		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Bid</button>
+  			<button class="btn btn-default editBtn">Save Bid</button> 
  
     	</form>
     </div>

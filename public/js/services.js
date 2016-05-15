@@ -5,7 +5,7 @@ var app = angular.module('tenderApp');
 app.service('ProfileService', function($http) {
 	
 	this.nameSort = (username) => {
-		return $http.get(`/api/auctions/${username}`);
+		return $http.get(`/api/auctions/users/${username}`);
 	}
 
 	
@@ -34,6 +34,7 @@ app.service('AuctionsService', function($http) {
   	}
 
 })
+
 
 
 
