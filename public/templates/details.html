@@ -16,8 +16,7 @@
 		<h4 class="itemInfo">Initial Bid: {{auction.initialBid | currency}}</h4>
 		<h4 class="itemInfo green">Highest Bid: {{auction.highestBid.value | currency}}</h4>
 		<h4 class="itemInfo">Highest Bid By: {{auction.highestBid.user}}</h4>
-		<h4 class="itemInfo">Auction Expires: {{auction.exp}}</h4>
-		<h4><timer interval="1000" countdown="100">{{countdown}}</timer></h4>
+		<h4 class="itemInfo">Auction Expires: <strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h4>
 	</div>
 </div>
 

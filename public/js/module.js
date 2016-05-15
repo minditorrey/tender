@@ -1,4 +1,4 @@
-var app = angular.module('tenderApp', ['ui.router', 'stormpath', 'stormpath.templates']);
+var app = angular.module('tenderApp', ['ui.router', 'countdownTimer', 'stormpath', 'stormpath.templates']);
 
 app.run(function($stormpath){
   $stormpath.uiRouter({
