@@ -1,4 +1,4 @@
-<div class="well">
+<div class="well headWell">
 <div class="row tableRow">
 	<div class="col-sm-3">
 		<div class="well imgWell">
@@ -16,7 +16,7 @@
 		<h4 class="itemInfo">Initial Bid: {{auction.initialBid | currency}}</h4>
 		<h4 class="itemInfo green">Highest Bid: {{auction.highestBid.value | currency}}</h4>
 		<h4 class="itemInfo">Highest Bid By: {{auction.highestBid.user}}</h4>
-		<h4 class="itemInfo">Auction Expires: <strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h4>
+		<h4 class="itemInfo red">Auction Expires: </br><strong countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h4>
 	</div>
 </div>
 

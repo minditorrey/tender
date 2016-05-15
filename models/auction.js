@@ -8,7 +8,7 @@ var auctionSchema = new mongoose.Schema({
   itemImage: { type: String, required: true},
   username: { type: String, required: true},
   initialBid: { type: Number, required: true },
-  exp: { type: Date, required: true}, 
+  exp: { type: String, required: true}, 
   highestBid: {
   	value: { type: Number },
   	user: { type: String }

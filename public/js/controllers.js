@@ -203,11 +203,12 @@ app.controller('profilesController', function($scope, $rootScope, AuctionsServic
         $scope.thisAuctionEdit = null;
         $scope.auctionForm = true;
         })
-        
+
     }
 
     $scope.cancelEdit = () => {
         $scope.thisAuctionEdit = null;
+        $scope.auctionForm = true;
     };
 
     $scope.removeAuction = function(auction) {
