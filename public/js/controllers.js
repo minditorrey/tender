@@ -33,22 +33,33 @@ app.controller('detailsController', function($rootScope, $scope, $state, $stateP
     };
 
     $scope.editAuction = (auction) => {
-       $scope.thisAuctionEdit = auction;
-       $scope.showAuctionForm(); 
-       $scope.editFormAuction = angular.copy(auction); 
+        if($scope.user.username === $scope.auction.username) {
+            alert("You can't bid on your own items.");
+        } else {
+
+            $scope.thisAuctionEdit = auction;
+            $scope.showAuctionForm(); 
+            $scope.editFormAuction = angular.copy(auction); 
+        }
     }
-
     $scope.saveChanges = (thisAuctionEdit) => {
-       AuctionsService.update(thisAuctionEdit)  
-       .then(res => {
-            
-            if(thisAuctionEdit._id === res.data._id) {
-                $scope.auction = res.data;
-                $scope.showAuctionForm();
-            } 
-        $scope.changeState(); 
-        })
+        if($scope.thisAuctionEdit.highestBid.value < ($scope.auction.highestBid.value && $scope.auction.initialBid)) {
+            alert("Bids must be greater than the initial bid and the current highest bid.");
+        } else {
 
+
+            AuctionsService.update(thisAuctionEdit)  
+                .then(res => {
+            
+                    if(thisAuctionEdit._id === res.data._id) {
+                        $scope.auction = res.data;
+                        $scope.showAuctionForm();
+                    } 
+                    $scope.auctionForm = true;
+                    $scope.changeState(); 
+                })
+
+    }
     }
 
     $scope.cancelEdit = () => {
@@ -66,7 +77,15 @@ app.controller('detailsController', function($rootScope, $scope, $state, $stateP
         $state.go('auctions');
     };
 
+    // if($scope.auction.exp === 0) {
+    //     var winner = document.createElement('h5');
+        
+    //     var str = "<b>The winner is {{user.username}}</b>";
+    //     winner.innerHTML = str;
+    // }
+
 });
+
 
  //end detailsController
 
@@ -153,7 +172,7 @@ app.controller('auctionsController', function($scope, AuctionsService, $statePar
 
 // End auctionsController
 
-app.controller('profilesController', function($scope, $rootScope, AuctionsService, ProfileService) {
+app.controller('profilesController', function($scope, $state, $rootScope, AuctionsService, ProfileService) {
     console.log('profileCtrl!');
     console.log('user:', $scope.user);
 
@@ -199,7 +218,8 @@ app.controller('profilesController', function($scope, $rootScope, AuctionsServic
                 }
             })
 
-        $scope.auctions.push($scope.thisAuctionEdit);
+        // $scope.auctions.push($scope.thisAuctionEdit);
+        $state.go('auctions');
         $scope.thisAuctionEdit = null;
         $scope.auctionForm = true;
         })

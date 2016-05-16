@@ -16,6 +16,11 @@ router.post('/', (req, res) => {
   });
 });
 
+router.get('/', (req, res) => {
+  Auction.find({}, (err, auctions) => {
+    res.status(err ? 400 : 200).send(err || auctions);
+  });
+});
 
 router.route('/:id')
   .put((req, res) => {
@@ -39,11 +44,6 @@ router.route('/:id')
 });
 
 
-router.get('/', (req, res) => {
-  Auction.find({}, (err, auctions) => {
-    res.status(err ? 400 : 200).send(err || auctions);
-  });
-});
 
 
 
@@ -72,5 +72,5 @@ router.route('/users/:username')
 			res.status(err ? 400 : 200).send(err || auctions);
 		})
 	})
-	
+
 module.exports = router;

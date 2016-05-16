@@ -11,12 +11,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-9">
-		<h4 class="itemInfo">Auction Host: {{auction.username}}</h4>
-		<h4 class="itemInfo">Initial Bid: {{auction.initialBid | currency}}</h4>
-		<h4 class="itemInfo green">Highest Bid: {{auction.highestBid.value | currency}}</h4>
-		<h4 class="itemInfo">Highest Bid By: {{auction.highestBid.user}}</h4>
-		<h4 class="itemInfo red">Auction Expires: </br><strong countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h4>
+	<div class=" auctionInfo col-sm-5">
+		<h5 class="itemInfo green">Auction Host: <span class="orange">{{auction.username}}</span></h5>
+		<h5 class="itemInfo green">Initial Bid: <span class="orange">{{auction.initialBid | currency}}</span></h5>
+		<h5 class="itemInfo green">Highest Bid: <span class="orange">{{auction.highestBid.value | currency}}</span></h5>
+		<h5 class="itemInfo green">Highest Bid By: <span class="orange">{{user.username}}</span></h5>
+		<h5 class="itemInfo red">Auction Expires: </br><strong countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5>
+	</div>
+	<div class="auctionInfo description col-sm-4">
+		<h5 class="itemInfo green">Description: </br><span class="orange">{{auction.itemDescription}}</span></h5>
+
 	</div>
 </div>
 

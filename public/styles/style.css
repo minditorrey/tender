@@ -90,7 +90,7 @@ h6 {
 	color: #ff7200;
 }
 
-tr:hover { 
+tr.orange:hover { 
     color: green;
     font-weight: bold;
     font-size: 20px;
@@ -128,8 +128,29 @@ tr:hover {
 }
 .red {
 	color: red;
+	margin-top: 10%;
 }
 
 .headWell {
 	margin-top: 5%;
+}
+
+.profileRow {
+	color: #ff7200;
+	font-size: 18px;
+}
+
+.auctionInfo {
+	background-color: #d1d1d1;
+	padding-bottom: 7%;
+	padding-left: 30px;
+}
+
+.description {
+	min-height: 297px;
+
+}
+
+.searchBox {
+	margin-bottom: 2%;
 }

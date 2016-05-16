@@ -8,6 +8,7 @@ var auctionSchema = new mongoose.Schema({
   itemImage: { type: String, required: true},
   username: { type: String, required: true},
   initialBid: { type: Number, required: true },
+  itemDescription: { type: String, required: true },
   exp: { type: String, required: true}, 
   highestBid: {
   	value: { type: Number },
