@@ -1,8 +1,10 @@
 <div class="row well headWell">
-
-<h5>Here are all auctions, {{user.givenName}}.</h5>
 <div class="row">
-	<button class="btn btn-lg addIt" ng-click="showAuctionForm()">Add New Auction</button>
+	<div class="col-sm-3">
+		<h5>Here are all auctions, {{user.givenName}}.</h5>
+
+		<button class="btn btn-lg addIt" ng-click="showAuctionForm()">Add New Auction</button>
+	</div>
 </div>
 
 <div class="row formRow">
@@ -75,7 +77,7 @@
 		      <td>{{auction.initialBid | currency}}</td>
 		      <td>{{auction.highestBid.value | currency}}</td>
 		      <td>{{auction.highestBid.user}}</td>
-		      <td>{{auction.exp}}</td>
+		      <td>{{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</td>
 			</tr>
 		  </tbody>
 		</table>

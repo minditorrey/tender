@@ -3,9 +3,9 @@
 var app = angular.module('tenderApp');
 
 
+
 app.controller('homeController', function($scope) {
     console.log('homeCtrl!');
-
 
 });
 
@@ -45,6 +45,7 @@ app.controller('detailsController', function($rootScope, $scope, $state, $stateP
     $scope.saveChanges = (thisAuctionEdit) => {
         if($scope.thisAuctionEdit.highestBid.value < ($scope.auction.highestBid.value && $scope.auction.initialBid)) {
             alert("Bids must be greater than the initial bid and the current highest bid.");
+                  
         } else {
 
 
@@ -77,12 +78,22 @@ app.controller('detailsController', function($rootScope, $scope, $state, $stateP
         $state.go('auctions');
     };
 
-    // if($scope.auction.exp === 0) {
+
+
+    // var newDate = new Date();
+    // var dateTime = "LastSync: " + newDate.today() + " @ " + newDate.timeNow();
+    // var expires = $scope.thisAuctionEdit.highestBid;
+    // console.log('thisAuctionEdit.highestBid', $scope.thisAuctionEdit.highestBid);
+
+
+    // if(dateTime.getTime() === expires.getTime()) {
     //     var winner = document.createElement('h5');
         
     //     var str = "<b>The winner is {{user.username}}</b>";
     //     winner.innerHTML = str;
     // }
+
+
 
 });
 
@@ -160,6 +171,8 @@ app.controller('auctionsController', function($scope, AuctionsService, $statePar
 
     $scope.cancelEdit = () => {
         $scope.thisAuctionEdit = null;
+        $scope.auctionForm = true;  
+
     };
 
     $scope.removeAuction = function(auction) {

@@ -11,12 +11,12 @@
 			</div>
 		</div>
 	</div>
-	<div class=" auctionInfo col-sm-5">
+	<div class="auctionInfo col-sm-5">
 		<h5 class="itemInfo green">Auction Host: <span class="orange">{{auction.username}}</span></h5>
 		<h5 class="itemInfo green">Initial Bid: <span class="orange">{{auction.initialBid | currency}}</span></h5>
 		<h5 class="itemInfo green">Highest Bid: <span class="orange">{{auction.highestBid.value | currency}}</span></h5>
 		<h5 class="itemInfo green">Highest Bid By: <span class="orange">{{user.username}}</span></h5>
-		<h5 class="itemInfo red">Auction Expires: </br><strong countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5>
+		<h5 class="itemInfo expires green">Auction Expires: {{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</br><strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5>
 	</div>
 	<div class="auctionInfo description col-sm-4">
 		<h5 class="itemInfo green">Description: </br><span class="orange">{{auction.itemDescription}}</span></h5>
@@ -39,7 +39,7 @@
       		 	<input class="inputBid" ng-value="{{50}}" ng-model="thisAuctionEdit.highestBid.value" type="number" class="form-control currency">
       		</div>
 
-      		<div class="form-group">
+<!--       		<div class="form-group">
       		  <label>Item</label>
       		  <input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item' DISABLED>
       		</div>
@@ -52,16 +52,21 @@
       		<div class="form-group">
       		  <label>Initial Bid:</label>
       		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid' DISABLED>
+      		</div>      		
+      		<div class="form-group">
+      		  <label>Highest Bid:</label>
+      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.highestBid' DISABLED>
       		</div>
       		
       		<div class="form-group">
       		  <label>Item Image:</label>  
       		  <input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage' DISABLED>
-      		</div>
+      		</div> -->
 
       		  
       		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Bid</button>
-  			<button class="btn btn-default editBtn">Save Bid</button> 
+  			<button class="btn btn-default editBtn">Save Bid</button>
+
  
     	</form>
     </div>

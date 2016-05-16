@@ -6,6 +6,7 @@
   <!-- <link rel="stylesheet" href="/bower_components/sweetalert/dist/sweetalert.css"> -->
   <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+
   <link rel="stylesheet" href="/styles/style.css">
   <script src="/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="/bower_components/angular/angular.min.js"></script>
@@ -15,9 +16,6 @@
   <script src="/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.min.js"></script>
   <script src="https://cdn.rawgit.com/globaljake/simple-inline-countdown-directive/master/directive/countdownTimer.js"></script>
 
-<!--     // <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script> -->
-    <!--<script src="/bower_components/ngSweetAlert/SweetAlert.min.js"></script>
-    <script src="/bower_components/sweetalert/dist/sweetalert.min.js"></script> -->
   <script src="/js/module.js"></script>
   <script src="/js/controllers.js"></script>
   <script src="/js/services.js"></script>
@@ -26,21 +24,21 @@
         <div class="container">
             <div class="row header">
                 <div class="col-sm-3">
-                    <h1>Tender</h1>
+                    <h1>T<span class="color2">e</span><span class="color3">n</span><span class="color4">d</span>e<span class="color5">r</span></h1>
                 </div>
 
                 <div class="col-sm-2">
-                    <a class="black" if-not-user ui-sref='login'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Login</a>
+                    <a class="black color2" if-not-user ui-sref='login'><span class="glyphicon glyphicon-log-in regular"></span>Login</a>
                 </div > 
                 <div class="col-sm-2">
-                    <a class="black" sp-logout if-user ui-sref='home'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Logout</a>
-                    <a class="black" if-not-user ui-sref='register'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Register</a>
+                    <a class="black color2" sp-logout if-user ui-sref='home'><span class="glyphicon glyphicon-log-out regular"></span> Logout</a>
+                    <a class="black color3" if-not-user ui-sref='register'><span class="glyphicon glyphicon-log-in regular"></span>Register</a>
                 </div>                
                 <div class="col-sm-2">
-                    <a class="black" ui-sref='profiles'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Profile</a>
+                    <a class="black color4" ui-sref='profiles'><span class="glyphicon glyphicon-user regular"></span> Profile</a>
                 </div>
                 <div class="col-sm-2">
-                    <a class="black" ui-sref='auctions'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Auctions</a>
+                    <a class="black color3" ui-sref='auctions'><span><img width="50" src="http://goo.gl/VLZ5ov" alt=""></span>Auctions</a>
                 </div>
                 
                 
