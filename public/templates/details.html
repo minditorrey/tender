@@ -15,12 +15,12 @@
 		<h5 class="detailInfo">Initial Bid: {{auction.initialBid | currency}}</h5></br></br>
 		<h5 class="detailInfo">Highest Bid: {{auction.highestBid.value | currency}}</h5></br>
 		<h5 class="detailInfo">Highest Bid By: {{user.username}}</h5></br>
-		<h5 class="detailInfo expires green">Auction Expires: {{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</br><strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5></br>
+		<h5 class="detailInfo expires green">Auction Expires: {{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</br><strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5></br></br>
 	</div>
 </div>
 
 <div class="row formRow" ng-hide="auctionForm">
-	<div class="col-sm-6 col-sm-offset-3">
+	<div class="bidForm col-sm-6">
 		<form ng-model="thisAuctionEdit" ng-submit='saveChanges(thisAuctionEdit)'>
       		
 			<div class="form-group">
@@ -34,3 +34,4 @@
     	</form>
     </div>	
 </div> 
+

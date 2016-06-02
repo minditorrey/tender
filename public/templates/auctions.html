@@ -5,14 +5,14 @@
 		<input placeholder="Search..." class = "searchInput" type="text" ng-model="sortByName">
 	</div>
 	<div class="col-sm-6">
-		<button class="btn btn-lg addIt" ng-click="showAuctionForm()">Add New Auction</button>
+		<button class="btn btn-lg addAuction" ng-click="showAuctionForm()">Add New Auction</button>
 	</div>
 </div>
 
 <div class="row formRow">
-	<div class="col-sm-6 col-sm-offset-3">
+	<div ng-hide="auctionForm" class="well col-sm-7">
 		
-		<form ng-model="thisAuctionEdit" ng-hide="auctionForm" ng-submit='saveChanges(thisAuctionEdit)'>
+		<form ng-model="thisAuctionEdit" ng-submit='saveChanges(thisAuctionEdit)'>
       
       		<div class="form-group">
       		  <label>Item</label>

@@ -123,13 +123,33 @@ a.black:active {
 	float: left;
 	margin-top: 5%;
 	margin-left: 2%;
+	background-color: #808080;
+}
+.addAuction {
+	color: white;
+	float: left;
+	margin-left: 2%;
+	background-color: #f91313;
 }
 
 .editBtn {
+	float: right;
+	margin-left: 2%;
+	margin-top: 3%;
+	background-color: #808080;
+	color: white;
+}
+
+label {
+	color: white;
+}
+
+.editsBtns {
 	background-color: #f91313;
 	float: right;
 	margin-right: 12%;
-	margin-top: 5%;
+	margin-top: 5%;	
+	color: white;
 }
 
 .removeBtn {
@@ -137,12 +157,13 @@ a.black:active {
 	float: right;
 	margin-right: 1%;
 	margin-top: 5%;
+	color: white;
 }
 
 .itemInfo {
 	margin-top: 8%;
 	color: white;
-	margin-left: 5%;
+	margin-left: 2%;
 }
 
 .items {
@@ -178,6 +199,9 @@ a.black:active {
 	font-size: 18px;
 }
 
+.bidForm {
+	margin-left: 4%;
+}
 .bidBtn {
 	background-color: #f91313;
 	color: white;
@@ -189,7 +213,7 @@ a.black:active {
 }
 
 .inputBid {
-	margin-left: 5%;
+
 }
 .red {
 	color: red;
@@ -198,6 +222,7 @@ a.black:active {
 
 .hello {
 	color: white;
+	margin-top: 15%;
 }
 
 .profileRow {
@@ -215,7 +240,8 @@ thead {
 }
 
 .formRow {
-	margin-left: 8%;
+	margin-top: -6%;
+	margin-left: 10%;
 }
 
 .description {
