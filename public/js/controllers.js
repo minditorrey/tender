@@ -11,7 +11,7 @@ app.controller('homeController', function($scope) {
 
 app.controller('detailsController', function($rootScope, $scope, $state, $stateParams, AuctionsService) {
     console.log('detailsCtrl!');
-
+    console.log('stateParams:', $stateParams.id);
     AuctionsService.getThisAuction($stateParams.id)
     .then(res => {
         $scope.auction = res.data;

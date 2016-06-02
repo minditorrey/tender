@@ -1,19 +1,21 @@
 
-<div class="row well headWell profileInfo">
-	<div class="col-sm-4 col-sm-offset-1">
+<div class="row profileInfo">
+	<div class="col-sm-2 col-sm-offset-1">
 		<img class="profilePic" width="150" ng-src="{{profilePic}}" alt="">
+	</div>
+	<div class="col-sm-3">
 		<h6>{{user.email}}</h6>
 		<h6>{{user.username}}</h6>
+		<h5>Here are your auctions, {{user.givenName}}. Good luck! </h5>
 		
 	</div>
-	<div class="greeting col-sm-6 col-sm-offset-1">
-		<h5>Here are your auctions, {{user.username}}.</h5>
-		<h5>Good luck!</h5>
+	<div class="greeting col-sm-4 col-sm-offset-1">
+		
 	</div>
 </div>
 
 
-<div class="row well tableRow">
+<div class="row tableRow">
 	<div class="col-sm-10 col-sm-offset-1">
 		<table class="table table-striped">
 		  <thead>
@@ -24,6 +26,8 @@
 		      <th>Highest Bid</th>
 		      <th>Bid By</th>
 		      <th>Expiration</th>
+		      <th></th>
+		      <th></th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -41,11 +45,11 @@
 	</div>
 </div>
 
-<div class="well">
-	<div class="row formRow">
-	<div class="col-sm-6 col-sm-offset-3">
+
+<div class="row formRow">
+	<div ng-hide="auctionForm" class="well col-sm-6 col-sm-offset-3">
 		
-		<form ng-model="thisAuctionEdit" ng-hide="auctionForm" ng-submit='saveChanges(thisAuctionEdit)'>
+		<form ng-model="thisAuctionEdit"  ng-submit='saveChanges(thisAuctionEdit)'>
       
       		<div class="form-group">
       		  <label>Item</label>
@@ -81,5 +85,3 @@
     	</form>
     </div>
 </div>
-
-</div> <!-- END WELL -->

@@ -30,7 +30,7 @@ app.service('AuctionsService', function($http) {
   	}
 
   	this.getThisAuction = (id) => {
-  		return $http.get(`/api/auctions/${id}`)
+  		return $http.get(`/api/auctions/${id}`);
   	}
 
 })

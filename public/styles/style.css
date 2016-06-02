@@ -3,97 +3,157 @@ container {
 }
 
 body {
-	background: url(https://goo.gl/YeMNwq) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-
+	background-color: #e2e0e0;
 }
 
 h1 {
-	margin-left: 5%;
+	margin-left: 10%;
 	font-size: 86px;
-	color: #ff7200;
+	color: white;
 	margin-top: 0%;
 	font-weight: bold;
-	text-shadow: 2px 2px 3px gray;	
+	font-family: 'Carter One', cursive;
+}
+
+.tagline {
+	color: white;
+	margin-left: 8%;
+	margin-top: -5%;
+	font-style: italic;
+}
+
+.header {
+	background-color: #f91313;
+	color: white;
+}
+
+.cardRow {
+	margin-top: 2%;
 }
 
 h4 {
-	margin-left: 32%;
-	font-size: 22px;
-	color: #ff7200;
-	margin-top: -3%;
+
+	font-size: 20px;
+	color: #f91313;
 	font-weight: bold;
 	text-shadow: 1px 1px 2px gray;	
 }
 
 h5 {
 	font-size: 18px;
-	color: #ff7200;
+	color: #808080;
+/*	margin-top: 40%;*/
+	float: right;
 }
 
+.card {
+	color: black;
+	background-color: white;
+	display: block;
+	text-align: center;
+	box-shadow: 2px 2px 3px black;
+	min-height: 400px;
+	max-height: 400px;
+}
+
+.card-img-top {
+	width: 100%;
+	max-width: 300px;
+	max-height: 230px;
+	min-height: 230px;
+}
 h6 {
 	font-size: 18px;
-	color: #ff7200;
+	color: #808080;
+}
+
+a.black:hover {
+	color: #cccccc;
+}
+
+a.black:active {
+	color: #cccccc;
 }
 
 .black {
 	font-size: 24px;
-	color: #ff7200;
+	color: white;
 	font-weight: bold;
 	margin-top: 6%;
 	float: right;
-	text-shadow: 1px 1px 2px gray;
 }
 
-.header {
-	background-color: gray;
-	background: rgba(225, 225, 225, .8);
-}
 
 .profileInfo {
 	margin-top: 3%;
 }
 
+.searchRow {
+		margin-top: 3%;
+
+}
+
+.searchInput {
+	width: 300px;
+}
+.searchBar {
+	font-size: 20px;
+	background-color: #f91313;
+	padding-top: 7px;
+	padding-right: -40px;
+	border-radius: 6px;
+}
+
+.searchBox {
+	color: white;
+}
+
 .profilePic {
-	box-shadow: 3px 3px 3px gray;
+	box-shadow: 3px 3px 3px black;
+}
+
+.detailInfo {
+	color: #f91313;
+	float: left;
+	margin-left: 5%;
 }
 
 .addIt {
-	background-color: #ff7200;
-	margin-left: 1%;
+	color: white;
+	float: left;
+	margin-top: 5%;
+	margin-left: 2%;
 }
 
 .editBtn {
-	background-color: #ff7200;
+	background-color: #f91313;
 	float: right;
 	margin-right: 12%;
 	margin-top: 5%;
 }
 
 .removeBtn {
-	background-color: #ff7200;
+	background-color: #f91313;
 	float: right;
 	margin-right: 1%;
 	margin-top: 5%;
 }
 
 .itemInfo {
-	margin-top: 3%;
+	margin-top: 8%;
+	color: white;
+	margin-left: 5%;
 }
 
 .items {
 	margin-top: 1%;
-	font-size: 28px;
-	color: #ff7200;
+	font-size: 24px;
+	color: white;
 }
 
-tr.orange:hover { 
-    color: green;
+.card:hover { 
+    color: red;
     font-weight: bold;
-    font-size: 20px;
     cursor: pointer;
 }
 
@@ -103,11 +163,10 @@ tr.orange:hover {
 
 }
 
-.margin {
-	margin-left: 6%;
-}
 .imgWell {
 	background-color: black;
+	width: 290px;
+	height: 450px;
 }
 
 .green {
@@ -115,13 +174,18 @@ tr.orange:hover {
 }
 
 .yourBid {
-	color: green;
+	color: #808080;
 	font-size: 18px;
 }
 
+.bidBtn {
+	background-color: #f91313;
+	color: white;
+}
+
 .itemImage {
-	box-shadow: 3px 3px 3px gray;
-	margin-bottom: 7%;
+	max-width: 250px;
+	min-width: 250px;
 }
 
 .inputBid {
@@ -132,26 +196,31 @@ tr.orange:hover {
 	margin-top: 10%;
 }
 
-.headWell {
-	margin-top: 5%;
-	box-shadow: 5px 5px 4px gray;
+.hello {
+	color: white;
 }
 
 .profileRow {
-	color: #ff7200;
+	color: #808080;
 	font-size: 18px;
 }
 
-.auctionInfo {
-	border-left: 2px solid gray;
-	padding-bottom: 7%;
-	padding-left: 30px;
-	margin-top: 1%;
+thead {
+	background-color: #f91313;
+	color: white;
+}
+
+.tableRow {
+	margin-top: 2%;
+}
+
+.formRow {
+	margin-left: 8%;
 }
 
 .description {
-	min-height: 297px;
-
+	margin-left: 2%;
+	color: white;
 }
 
 .searchBox {
@@ -164,6 +233,7 @@ tr.orange:hover {
 
 .well {
 	box-shadow: 4px 4px 3px gray;
+	background-color: #f91313;
 
 }
 
@@ -173,18 +243,4 @@ tr.orange:hover {
 
 .greeting {
 	margin-top: 5%;
-}
-.color2 {
-	color: green;
-}
-
-.color3 {
-	color: red;
-}
-.color4 {
-	color: blue;
-}
-
-.color5 {
-	color: green;
 }

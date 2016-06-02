@@ -1,75 +1,36 @@
-<div class="well headWell">
+
 <div class="row tableRow">
 	<div class="col-sm-3">
 		<div class="well imgWell">
+			<img class="itemImage img-responsive" ng-src="{{auction.itemImage}}" alt="">
 			<h2 class="items">{{auction.item}}</h2>
-			<img class="itemImage img-responsive" ng-src="{{auction.itemImage}}" width="250" alt="">
-			<div class="row">
-				
-				<button class="btn btn-lg margin addIt" ng-click="editAuction(auction)" >Make Bid!</button>  
-				
-			</div>
+			
+				<h5 class="description">{{auction.itemDescription}}</h5>
+				<button class="btn btn-lg addIt" ng-click="editAuction(auction)" >Make Bid!</button>	
 		</div>
 	</div>
-	<div class="auctionInfo col-sm-5">
-		<h5 class="itemInfo green">Auction Host: <span class="orange">{{auction.username}}</span></h5>
-		<h5 class="itemInfo green">Initial Bid: <span class="orange">{{auction.initialBid | currency}}</span></h5>
-		<h5 class="itemInfo green">Highest Bid: <span class="orange">{{auction.highestBid.value | currency}}</span></h5>
-		<h5 class="itemInfo green">Highest Bid By: <span class="orange">{{user.username}}</span></h5>
-		<h5 class="itemInfo expires green">Auction Expires: {{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</br><strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5>
-	</div>
-	<div class="auctionInfo description col-sm-4">
-		<h5 class="itemInfo green">Description: </br><span class="orange">{{auction.itemDescription}}</span></h5>
 
+	<div class="itemInfo col-sm-5">
+		<h5 class="detailInfo">Auction Host: {{auction.username}}</h5></br></br>
+		<h5 class="detailInfo">Initial Bid: {{auction.initialBid | currency}}</h5></br></br>
+		<h5 class="detailInfo">Highest Bid: {{auction.highestBid.value | currency}}</h5></br>
+		<h5 class="detailInfo">Highest Bid By: {{user.username}}</h5></br>
+		<h5 class="detailInfo expires green">Auction Expires: {{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</br><strong class="red" countdown end-date="{{auction.exp}}" units="days|hours|minutes|seconds"></strong></h5></br>
 	</div>
 </div>
 
-	
-
-</div> <!-- end well -->
-	
-
-<div class="well">	
-	<div class="row formRow">
+<div class="row formRow" ng-hide="auctionForm">
 	<div class="col-sm-6 col-sm-offset-3">
-		<form ng-model="thisAuctionEdit" ng-hide="auctionForm" ng-submit='saveChanges(thisAuctionEdit)'>
+		<form ng-model="thisAuctionEdit" ng-submit='saveChanges(thisAuctionEdit)'>
       		
 			<div class="form-group">
       		  	<label class="yourBid">Your Bid:</label>
       		 	<input class="inputBid" ng-value="{{50}}" ng-model="thisAuctionEdit.highestBid.value" type="number" class="form-control currency">
-      		</div>
-
-<!--       		<div class="form-group">
-      		  <label>Item</label>
-      		  <input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item' DISABLED>
-      		</div>
-		
-      		<div class="form-group">
-      		  <label>Username:</label>
-      		  <input type="text" placeholder="{{user.username}}" class="form-control" required ng-model='thisAuctionEdit.username' DISABLED>
-      		</div>
-		
-      		<div class="form-group">
-      		  <label>Initial Bid:</label>
-      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid' DISABLED>
-      		</div>      		
-      		<div class="form-group">
-      		  <label>Highest Bid:</label>
-      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.highestBid' DISABLED>
-      		</div>
-      		
-      		<div class="form-group">
-      		  <label>Item Image:</label>  
-      		  <input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage' DISABLED>
-      		</div> -->
-
       		  
-      		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Bid</button>
-  			<button class="btn btn-default editBtn">Save Bid</button>
-
+      			<button type="button" class="btn btn-default bidBtn" ng-click='cancelEdit()'>Cancel Bid</button>
+  				<button class="btn btn-default bidBtn">Save Bid</button>
+      		</div>
  
     	</form>
-    </div>
-</div>	
-
-</div> <!-- end well -->
+    </div>	
+</div> 
