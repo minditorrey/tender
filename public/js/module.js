@@ -46,13 +46,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 			sp: {
 				authenticate: true
 			}
-			// resolve: {
-			// 	AUCTION: function($auction) {
-			// 		return $auction.get();
-			// 	}
-			// }
 		})
-
 
 
 	$urlRouterProvider.otherwise('/');

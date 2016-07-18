@@ -1,10 +1,8 @@
-
 <div class="row tableRow">
 	<div class="col-sm-3">
 		<div class="well imgWell">
 			<img class="itemImage img-responsive" ng-src="{{auction.itemImage}}" alt="">
 			<h2 class="items">{{auction.item}}</h2>
-			
 				<h5 class="description">{{auction.itemDescription}}</h5>
 				<button class="btn btn-lg addIt" ng-click="editAuction(auction)" >Make Bid!</button>	
 		</div>
@@ -21,17 +19,13 @@
 
 <div class="row formRow" ng-hide="auctionForm">
 	<div class="bidForm col-sm-6">
-		<form ng-model="thisAuctionEdit" ng-submit='saveChanges(thisAuctionEdit)'>
-      		
+		<form ng-model="thisAuctionEdit" ng-submit='saveChanges(thisAuctionEdit)'> 		
 			<div class="form-group">
       		  	<label class="yourBid">Your Bid:</label>
       		 	<input class="inputBid" ng-value="{{50}}" ng-model="thisAuctionEdit.highestBid.value" type="number" class="form-control currency">
-      		  
       			<button type="button" class="btn btn-default bidBtn" ng-click='cancelEdit()'>Cancel Bid</button>
   				<button class="btn btn-default bidBtn">Save Bid</button>
       		</div>
- 
     	</form>
     </div>	
 </div> 
-

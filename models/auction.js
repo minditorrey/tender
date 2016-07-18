@@ -2,7 +2,6 @@
 
 var mongoose = require('mongoose');
 
-
 var auctionSchema = new mongoose.Schema({
   item: { type: String, required: true},
   itemImage: { type: String, required: true},
@@ -15,7 +14,6 @@ var auctionSchema = new mongoose.Schema({
   	user: { type: String }
   }
 });
-
 
 var Auction = mongoose.model('Auction', auctionSchema);
 

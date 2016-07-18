@@ -10,47 +10,38 @@
 </div>
 
 <div class="row formRow">
-	<div ng-hide="auctionForm" class="well col-sm-7">
-		
+	<div ng-hide="auctionForm" class="well col-sm-7">	
 		<form ng-model="thisAuctionEdit" ng-submit='saveChanges(thisAuctionEdit)'>
-      
       		<div class="form-group">
-      		  <label>Item</label>
-      		  <input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item'>
+      		  	<label>Item</label>
+      		  	<input type="text" placeholder="name of item" class="form-control" required ng-model='thisAuctionEdit.item'>
       		</div>      		
       		<div class="form-group">
-      		  <label>Description:</label>
-      		  <input type="text" placeholder="Brief Description of item, including size, weight, and other important features." class="form-control" required ng-model='thisAuctionEdit.itemDescription'>
+      		  	<label>Description:</label>
+      		  	<input type="text" placeholder="Brief Description of item, including size, weight, and other important features." class="form-control" required ng-model='thisAuctionEdit.itemDescription'>
       		</div>
-		
       		<div class="form-group">
-      		  <label>Username:</label>
-      		  <input type="text" placeholder="{{user.username}}" class="form-control" required ng-model='thisAuctionEdit.username'>
+      		  	<label>Username:</label>
+      		  	<input type="text" placeholder="{{user.username}}" class="form-control" required ng-model='thisAuctionEdit.username'>
+      		</div>		
+      		<div class="form-group">
+      		  	<label>Initial Bid:</label>
+      		  	<input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid'>
       		</div>
-		
       		<div class="form-group">
-      		  <label>Initial Bid:</label>
-      		  <input type="currency" class="form-control" placeholder="$10" required ng-model='thisAuctionEdit.initialBid'>
-      		</div>
-
-      		<div class="form-group">
-      		  <label>Auction Expires On:</label>  
-      		  <input type="datetime-local" class="form-control" ng-model='thisAuctionEdit.exp'>
+      		  	<label>Auction Expires On:</label>  
+      		  	<input type="datetime-local" class="form-control" ng-model='thisAuctionEdit.exp'>
       		</div>      		
       		<div class="form-group">
-      		  <label>Item Image:</label>  
-      		  <input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage'>
+      		  	<label>Item Image:</label>  
+      		  	<input type="string" class="form-control" ng-model='thisAuctionEdit.itemImage'>
       		</div>
-      		<button class="btn btn-lg addIt" ng-click="addAuction(thisAuctionEdit)">Add Auction</button>     
+      		<button class="btn btn-lg addIt" ng-click="addAuction(thisAuctionEdit)">Add Auction</button>  
       		<button type="button" class="btn btn-default editBtn" ng-click='cancelEdit()'>Cancel Edit</button>
   			<button class="btn btn-default editBtn">Save Edit</button> 
- 
     	</form>
-    </div>
+	</div> <!-- end well -->
 </div>
-
-</div> <!-- end well -->
-
 
 <div class="row cardRow">
 	<div class="col-sm-3" ng-repeat="auction in auctions | filter: sortByName">
@@ -67,45 +58,3 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-<!-- <div class="row well tableRow">
-	<div class="col-sm-10 col-sm-offset-1">
-		<div class="searchBox">
-			<label class="searchBox green" for="search"><span class="glyphicon glyphicon-search"></span> Search Auctions:</label>
-			<input class = "searchInput" type="text" ng-model="sortByName">
-		</div>
-
-
-
-		<table class="table table-striped">
-		  <thead>
-		    <tr>
-		      <th></th>
-		      <th>Item</th>
-		      <th>User Name</th>
-		      <th>Initial Bid</th>
-		      <th>Highest Bid</th>
-		      <th>Bid By</th>
-		      <th>Expiration</th>
-
-		    </tr>
-		  </thead>
-		  <tbody>
-		    <tr class="orange" ui-sref="details({id: auction._id})" ng-click="getThisAuction(auction)" ng-repeat="auction in auctions | filter: sortByName">
-		      <td><img class="itemImage img-responsive" ng-src="{{auction.itemImage}}" width="75" alt=""></td>
-		      <td>{{auction.item}}</td>
-		      <td>{{auction.username}}</td>
-		      <td>{{auction.initialBid | currency}}</td>
-		      <td>{{auction.highestBid.value | currency}}</td>
-		      <td>{{auction.highestBid.user}}</td>
-		      <td>{{auction.exp | date: "MM/dd/yyyy 'at' h:mma"}}</td>
-			</tr>
-		  </tbody>
-		</table>
-	</div>
-</div>  --><!-- end well -->
-
-
